@@ -86,6 +86,32 @@ ClientAliveInterval 100  # seconds of inactivity before logout
 ClientAliveCountMax 3  # three "are you there?" messages before killing a connection
 ```
 
+### Configure authorized keys permissions
+
+```bash
+sudo mkdir -p /etc/ssh/authorized_keys
+sudo chown root:root /etc/ssh/authorized_keys
+sudo chmod 755 /etc/ssh/authorized_keys
+```
+
+then in the ssh config:
+
+```text
+# %u is a mini-macro that expands to the current username
+AuthorizedKeysFile /etc/ssh/authorized_keys/%u
+```
+
+Example for a user `alex`:
+
+```bash
+# Lockdown: Only root can read/write; others can only read
+sudo chown root:root /etc/ssh/authorized_keys/alex
+sudo chmod 644 /etc/ssh/authorized_keys/alex
+```
+
+Now `alex` can read his authorized key file, but only the root can change it.
+This means that if you want to add another public key you need to explicitly ask admin to do it for you.
+
 ### [Optional] Change default port
 
 ```text
