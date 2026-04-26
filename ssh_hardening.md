@@ -86,7 +86,7 @@ ClientAliveInterval 100  # seconds of inactivity before logout
 ClientAliveCountMax 3  # three "are you there?" messages before killing a connection
 ```
 
-### Configure authorized keys permissions
+### [OPTIONAL] Configure authorized keys permissions
 
 ```bash
 sudo mkdir -p /etc/ssh/authorized_keys
