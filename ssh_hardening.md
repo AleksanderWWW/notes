@@ -44,7 +44,7 @@ Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.
 MACs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,umac-128-etm@openssh.com
 ```
 
-### [OPTIONAL] Modify log level
+### [Optional] Modify log level
 
 ```text
 LogLevel INFO  # VERBOSE, DEBUG, DEBUG1...
@@ -52,7 +52,7 @@ LogLevel INFO  # VERBOSE, DEBUG, DEBUG1...
 
 Logs are accessible at `/var/log/auth.log`.
 
-### Access Control
+### [Optional] Access Control
 
 ```text
 AllowUsers <username>
@@ -64,7 +64,7 @@ Or the entire group
 AllowGroups <groupname>
 ```
 
-### Disable X11 forwarding
+### [Optional] Disable X11 forwarding
 
 ```text
 X11Forwarding no
@@ -79,7 +79,7 @@ GatweayPorts no
 PermitTunnel no
 ```
 
-### Automatically logout stale users
+### [Optional] Automatically logout stale users
 
 ```text
 ClientAliveInterval 100  # seconds of inactivity before logout
@@ -118,7 +118,7 @@ This means that if you want to add another public key you need to explicitly ask
 Port 2222
 ```
 
-### Banner
+### [Optional] Banner
 
 ```text
 Banner /etc/ssh/sshd-banner
