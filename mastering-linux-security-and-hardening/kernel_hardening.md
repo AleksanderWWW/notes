@@ -154,16 +154,11 @@ proc /proc proc hidepid=2 0 0
 Now remount the `/proc` catalog:
 
 ```bash
+sudo systemctl daemon-reload
 sudo mount -o remount proc
 ```
 
 This way only the `sudo` user can view processes others than one's own.
-
-You might also be asked to reload the `systemd`. DO so by running:
-
-```bash
-sudo systemctl daemon-reload
-```
 
 You can verify it by running as a non-root user:
 
